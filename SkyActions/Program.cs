@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.AspNetCore;
@@ -32,15 +30,6 @@ namespace SkyActions {
             Task.Run(() => {
                 server.Run();
             });
-        }
-
-        static void LaunchEmbeddedWebServer_One() {
-            var host = new WebHostBuilder()
-                        .UseKestrel()
-                        .UseUrls("http://*:5050")
-                        .UseStartup<Startup>()
-                        .Build();
-            host.Run();
         }
     }
 }
